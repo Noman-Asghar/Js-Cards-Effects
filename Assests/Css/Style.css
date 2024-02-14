@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+    color: white;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+}
+ .cards{
+    margin-top: 50px;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px;
+    overflow: hidden;
+   background: rgba(45, 45, 45, 0,1);
+    position: relative;
+    border-radius: 40px;
+    transition: .5s;
+}
+.cards::before{
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    background: radial-gradient( var(--clr),transparent,transparent);
+    width: 700px;
+    height: 700px;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: .5s top 0s, left 0s;
+
+}
+
+.cards::after{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 18px;
+    background: rgba(45, 45, 45, 0.75);
+}
+
+.cards:hover::before{
+
+    opacity: 1;
+}
+
+.cards input{
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-weight: 900;
+    z-index: 5;
+}
+
+button{
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(23, 165, 23);
+    color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    z-index: 6;
+}
+
+.cards h3{
+    margin-bottom: 10px;
+    z-index: 7;
+}
+.cards h4{
+    z-index: 8;
+}
